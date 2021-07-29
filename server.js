@@ -29,8 +29,6 @@ app.use(express.static(staticpath))
 //routing
 
 app.get("/", (req, res) => {
-    // res.render("index");
-    // response.sendFile('index.html');
     res.sendFile(__dirname + '/public/index.html');
 })
 
@@ -97,8 +95,7 @@ app.post("/contact", async (req, res) => {
                 if (error) {
                     console.log(error);
                 } else {
-                    // console.log(information.reponse);
-                    // console.log(information);
+
                     console.log("Mail sent to the Ankit Singh!");
                 }
             });
