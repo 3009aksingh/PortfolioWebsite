@@ -33,7 +33,6 @@ app.get("/", (req, res) => {
 })
 
 app.post("/contact", async (req, res) => {
-    console.log("inside contact backend");
     var username = req.body.name;
     var useremail = req.body.email;
     var usermessage = req.body.message;
@@ -44,7 +43,7 @@ app.post("/contact", async (req, res) => {
         if (err) {
             console.log('something went wrong here ' + err);
         } else {
-            console.log("connected successfully");
+            console.log("Database connected successfully");
             var dbObj = dbData.db("Portfolio"); // creating a database in mongodb
 
             // For insertOne
@@ -96,7 +95,7 @@ app.post("/contact", async (req, res) => {
                     console.log(error);
                 } else {
 
-                    console.log("Mail sent to the Ankit Singh!");
+                    console.log("Mail sent to the Admin!");
                 }
             });
             // End Mail code 1

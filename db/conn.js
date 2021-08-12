@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 //creating a database 
-
-mongoose.connect("mongodb+srv://ankit:ankita@cluster0.5bzmb.mongodb.net/Portfolio?retryWrites=true&w=majority", {
+const url = process.env.MONGODB_URL;
+mongoose.connect(url, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
