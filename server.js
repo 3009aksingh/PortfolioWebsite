@@ -57,17 +57,17 @@ app.post("/contact", async (req, res) => {
 
             // transporter
             var transporter = nodemailer.createTransport({
-                service: 'gmail',
+                service: process.env.MAIL_SERVER,
                 auth: {
-                    user: 'ankit.singh.3009ak@gmail.com',
-                    pass: 'ankit@123'
+                    user: process.env.ADMIN_MAIL,
+                    pass: process.env.ADMIN_PASS
                 }
             });
 
             // mail information
             var mailoptions = {
-                from: 'ankit.singh.3009ak@gmail.com',
-                to: '3009aksingh@gmail.com',
+                from: process.env.ADMIN_MAIL,
+                to: process.env.MIDDLE_MAIL,
                 subject: 'Welcome User',
                 // text: 'Hello, testing mail ahead!!!'
                 html: `
@@ -104,16 +104,16 @@ app.post("/contact", async (req, res) => {
 
             // transporter
             var transporter = nodemailer.createTransport({
-                service: 'gmail',
+                service: process.env.MAIL_SERVER,
                 auth: {
-                    user: 'ankit.singh.3009ak@gmail.com',
-                    pass: 'ankit@123'
+                    user: process.env.ADMIN_MAIL,
+                    pass: process.env.ADMIN_PASS
                 }
             });
 
             // mail information
             var mailoptions = {
-                from: 'ankit.singh.3009ak@gmail.com',
+                from: process.env.ADMIN_MAIL,
                 to: useremail, // testing
                 subject: 'Confirmation Mail',
                 // text: 'Hello, testing mail ahead!!!'
