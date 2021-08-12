@@ -4,8 +4,8 @@ const nodemailer = require("nodemailer");
 
 const express = require("express");
 const path = require("path");
-
-
+const dotenv = require("dotenv");
+dotenv.config();
 const User = require("./models/usermessage")
 
 const app = express();
@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000;
 
 const staticpath = path.join(__dirname, "public");
 
-var url = "mongodb+srv://ankit:ankita@cluster0.5bzmb.mongodb.net/Portfolio?retryWrites=true&w=majority";
+const url = process.env.MONGODB_URL;
 
 app.use('/css', express.static(path.join(__dirname, "../node_modules/bootstrap/dist/css")));
 app.use('/js', express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js")));
